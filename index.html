@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sesi 6 cuy</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a onclick="refreshMode()" id="restart"">HOME</a>
+            <a onclick="darkMode()" id="mode">MODE-LIGHT</a>
+            <a onclick="jombloMode()"  >MODE-JOMBLO</a>
+        </nav>
+        <div class="content">
+            <h1>SESI 6 CUY UNIVERSITY</h1>
+            <p id="infor" class="info"></p>
+        </div>
+    </div>
+
+    <script>
+        let body = document.body;
+        let infor = document.querySelector('#infor');
+        let mode = document.getElementById("mode");
+        let restart = document.getElementById("restart");
+
+        const limitDark = 5;
+        let counterDark = 0;
+        let rememberDark ;
+        let bil = 1;
+        
+        
+        function darkMode(){
+            
+            let modulus = bil % 2;
+
+            if(modulus == 0){
+                mode.textContent = "MODE-LIGHT";
+                bil++
+            }else if(modulus != 0){
+                mode.textContent = "MODE-DARK";
+                bil++
+            }
+            
+
+            if(rememberDark == 0){
+                infor.textContent = "JATAH MENGUBAH MODE SUDAH HABIS"
+                mode.style.display = "none"
+                restart.textContent = "RESTART"
+                restart.style.display = "inline"
+                return;
+            }
+            
+
+            counterDark += 1;
+            rememberDark = limitDark - counterDark;
+            
+            console.log(modulus)
+            body.classList.toggle("dark");
+            infor.textContent = `kamu telah melakukan klik ${counterDark}X, sisa menganti mode ${rememberDark}X`
+        }
+        
+        function refreshMode(){
+                location.reload();    
+        }
+
+        function jombloMode(){
+            body.classList.toggle("jomblo");
+            counterDark += 1;
+        }
+
+    </script>
+</body>
+</html>

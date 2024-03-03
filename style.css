@@ -1,0 +1,81 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: aliceblue;
+  color: black;
+}
+
+
+.dark{
+    background-color: rgb(36, 59, 38);
+    color: azure;
+}
+.jomblo{
+    background-color: rgb(124, 130, 221);
+    color: rgb(59, 102, 102);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container nav {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(63, 61, 59);
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+nav a {
+  color: rgb(73, 226, 43);
+  padding: 20px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav a:hover {
+  background-color: rgba(137, 43, 226, 0.432);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.content{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.info{
+    display: flex;
+    font-size: 15px;
+    animation: jj 2s infinite;
+    position: absolute;
+    top: 20px;
+    font-weight: 700;
+}
+
+@keyframes jj {
+    0%{
+        font-size: 15px;
+    }
+    50%{
+        font-size: 17px;
+    }
+    100%{
+        font-size: 15px;
+    }
+}
